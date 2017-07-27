@@ -36,13 +36,11 @@ function computerGuessGen() {
 
 //Storing randomly generated computer guess as variable;
 computerGuess = answerArray[computerGuessGen()];
-console.log(computerGuess);
 //Initiating a function on keystroke
 document.onkeyup = function(event) {
 
 	//capture keystroke from above
 	var userGuess = event.key;
-	console.log(userGuess);
 
 	//Compare user guess to computer guess to determine if they selected a letter
 	if (answerArray.indexOf(userGuess) > -1) {
@@ -52,12 +50,11 @@ document.onkeyup = function(event) {
 			wins = wins + 1;
 			userGuesses = [];
 			guessesLeft = 9;
-			//Reseting computer guess.  This code should be altered.
+			//Reseting computer guess.  This code is wet.
 			function computerGuessGen() {
 				return Math.floor(Math.random() * answerArray.length);
 			}
 			computerGuess = answerArray[computerGuessGen()];
-			console.log(computerGuess);
 		//Compare user guess to computer guess to determine if they chose incorrectly
 		} else if (userGuess !== computerGuess && guessesLeft > 1) {
 			userGuesses.push(userGuess);
@@ -68,12 +65,11 @@ document.onkeyup = function(event) {
 			losses = losses + 1;
 			guessesLeft = 9;
 			userGuesses = [];
-			//Reseting computer guess.  This code should be altered.
+			//Reseting computer guess.  This code is wet.
 			function computerGuessGen() {
 				return Math.floor(Math.random() * answerArray.length);
 			}
 			computerGuess = answerArray[computerGuessGen()];
-			console.log(computerGuess);
 		}
 
 		//alerting the user they didn't select a valid character
