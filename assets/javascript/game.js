@@ -35,7 +35,7 @@ computerGuess = answerArray[computerGuessGen()];
 document.onkeyup = function(event) {
 
 	//capture keystroke from above
-	var userGuess = event.key;
+	var userGuess = event.key.toLowerCase();
 
 	//Compare user guess to computer guess to determine if they selected a letter
 	if (answerArray.indexOf(userGuess) > -1) {
